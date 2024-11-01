@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật!</title>
+    <style>
+        /* Đặt nền hồng pastel và phông chữ mềm mại */
+        body {
+            margin: 0;
+            font-family: 'Dancing Script', cursive;
+            background-color: #FFC0CB;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #FF69B4;
+            margin-top: 0;
+        }
+
+        p {
+            font-size: 1.2em;
+        }
+
+        /* Hiệu ứng trái tim bay */
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FF69B4;
+            transform: rotate(45deg);
+            animation: float 5s infinite ease-in-out;
+        }
+        .heart:before, .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #FF69B4;
+            border-radius: 50%;
+        }
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        .heart:after {
+            left: 10px;
+            top: 0;
+        }
+        @keyframes float {
+            0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
+        }
+
+        /* Đặt nút "Khám Phá" */
+        .btn-discover {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            background-color: #FF69B4;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        
+        .btn-discover:hover {
+            background-color: #ff4081;
+            transform: scale(1.1);
+        }
+
+        /* Thông điệp ngắn */
+        .message {
+            display: none;
+            font-size: 1.5em;
+            margin-top: 20px;
+            color: #FF1493;
+        }
+
+        /* Ảnh động và lời chúc cuối cùng */
+        .final-content {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+            color: #FF1493;
+        }
+
+        .final-content img {
+            width: 200px;
+            height: auto;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tiêu đề chúc mừng sinh nhật -->
+    <h1>Chúc Mừng Sinh Nhật, MiNu !</h1>
+    <p>Hôm nay là một ngày vô cùng đặc biệt! Đây là món quà nhỏ anh dành cho em nha !</p>
+
+    <!-- Nút "Khám Phá" -->
+    <button class="btn-discover" onclick="showMessage()">Bấm dô đây nè 🎉</button>
+
+    <!-- Thông điệp ngắn sẽ xuất hiện khi bấm nút -->
+    <div class="message" id="message"></div>
+
+    <!-- Nội dung cuối cùng với GIF và lời chúc -->
+    <div class="final-content" id="finalContent">
+        <p>Chúc em một sinh nhật tràn đầy niềm vui và hạnh phúc! Anh yêu em
+            </p>
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExcGxvajM4cWVmMHZjM2tmN2Zjbzk4Yjlvd3Y0MGFrNGQxb2xpYWFxbyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7NpSWoebkmJuryOWOG/giphy.gif" alt="Happy Birthday GIF">
+    </div>
+
+    <!-- Hiệu ứng trái tim bay -->
+    <div class="heart" style="left: 10%; animation-duration: 6s;"></div>
+    <div class="heart" style="left: 30%; animation-duration: 8s;"></div>
+    <div class="heart" style="left: 50%; animation-duration: 5s;"></div>
+    <div class="heart" style="left: 70%; animation-duration: 7s;"></div>
+    <div class="heart" style="left: 90%; animation-duration: 6s;"></div>
+
+    <script>
+        // Mảng các thông điệp ngẫu nhiên
+        const messages = [
+            "Có điều gì đó thú vị ở đây...",
+            "Từ từ chưa tới !",
+            "Chỉ cần một lần nữa thôi!",
+            "Đã đến lúc nhận quà rồi!"
+        ];
+        
+        let clickCount = 0; // Đếm số lần nhấn nút
+
+        function showMessage() {
+            const messageDiv = document.getElementById("message");
+            const finalContent = document.getElementById("finalContent");
+
+            // Nếu đã nhấn đủ 5 lần, hiển thị nội dung cuối cùng
+            if (clickCount >= 4) {
+                messageDiv.style.display = "none";
+                finalContent.style.display = "block";
+            } else {
+                // Hiển thị thông điệp ngẫu nhiên
+                messageDiv.textContent = messages[clickCount];
+                messageDiv.style.display = "block";
+                clickCount++;
+            }
+        }
+    </script>
+</body>
+</html>

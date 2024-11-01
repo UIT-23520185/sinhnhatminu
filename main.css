@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #dff0d8; /* Màu nền xanh lá nhẹ nhàng */
+    color: #3c763d; /* Màu chữ tối hơn để dễ đọc */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #3c763d; /* Màu xanh lá đậm cho header */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Phông chữ dễ thương */
+}
+
+footer {
+    background-color: #3c763d; /* Màu xanh lá đậm cho footer */
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
